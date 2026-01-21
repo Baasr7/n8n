@@ -2,8 +2,8 @@ name: Website Uptime Monitor
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # every 5 minutes
-  workflow_dispatch:       # allow manual run
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   monitor:
@@ -13,7 +13,7 @@ jobs:
       - name: Check website availability
         run: |
           echo "Checking website..."
-          STATUS_CODE=$(curl -o /dev/null -s -w "%{http_code}" *https://n8n-nckh.onrender.com/)* 
+          STATUS_CODE=$(curl -o /dev/null -s -w "%{http_code}" https://n8n-nckh.onrender.com/)
 
           echo "HTTP Status Code: $STATUS_CODE"
 
